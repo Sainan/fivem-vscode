@@ -4,8 +4,7 @@ import { NativeFunction } from "../types/nativeFunction";
 import { NativeParam } from "../types/nativeParam";
 
 const documentationUrls = [
-	"https://runtime.fivem.net/doc/natives.json",
-	"https://runtime.fivem.net/doc/natives_cfx.json",
+	"https://raw.githubusercontent.com/alloc8or/gta5-nativedb-data/master/natives.json",
 ];
 
 export class NativeService {
@@ -32,7 +31,7 @@ export class NativeService {
 					native.name = this.parseNativeName(native.name);
 					native.description = native.description && this.parseNativeDescription(native.description);
 					native.params = this.parseNativeParams(native.params);
-					native.results = native.results && this.parseType(native.results);
+					native.return_type = native.return_type && this.parseType(native.return_type);
 					natives.push(native);
 				}
 			}

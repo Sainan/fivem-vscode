@@ -38,7 +38,7 @@ export class CompletionItemProvider implements vscode.CompletionItemProvider {
 
 		const params = native.params.map((p) => `${p.name}: ${p.type}`).join(", ");
 		completionItem.documentation.appendCodeblock(
-			`${native.name}(${params})${native.results && `: ${native.results}`}`
+			`${native.name}(${params})${native.return_type && `: ${native.return_type}`}`
 		);
 
 		if (native.description) {
