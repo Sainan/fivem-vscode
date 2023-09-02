@@ -2,7 +2,6 @@ import fetch from "node-fetch";
 import { DocumentationResponse } from "../types/documentationResponse";
 import { NativeFunction } from "../types/nativeFunction";
 import { NativeParam } from "../types/nativeParam";
-import { specificFunctions } from "./specificFunctions";
 
 const documentationUrls = [
 	"https://runtime.fivem.net/doc/natives.json",
@@ -11,7 +10,7 @@ const documentationUrls = [
 
 export class NativeService {
 	static async getAllNatives(): Promise<NativeFunction[]> {
-		const allNatives: NativeFunction[] = specificFunctions;
+		const allNatives: NativeFunction[] = [];
 		
 		const nativeArrays = await Promise.all(documentationUrls.map((url) => this.fetchNatives(url)));
 		for (const natives of nativeArrays) {
