@@ -43,11 +43,7 @@ export class NativeService {
 	}
 
 	private static parseNativeName(rawName: string) {
-		return rawName
-			.split("_")
-			.filter((n) => n.length > 0)
-			.map((n) => n.substr(0, 1) + n.substr(1).toLowerCase())
-			.join("");
+		return rawName;
 	}
 
 	private static parseNativeDescription(rawDescription: string) {
